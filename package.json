@@ -1,11 +1,10 @@
 {
 	"name": "mini-create-react-context",
-	"version": "0.2.4",
+	"version": "0.3.0",
 	"description": "Smaller Polyfill for the proposed React context API",
 	"main": "dist/cjs/index.js",
 	"module": "dist/esm/index.js",
 	"types": "dist/index.d.ts",
-	"typings": "lib/index.d.ts",
 	"repository": "https://github.com/StringEpsilon/mini-create-react-context",
 	"author": "StringEpsilon",
 	"license": "MIT",
