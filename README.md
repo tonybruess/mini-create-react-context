@@ -1,11 +1,11 @@
-# create-react-context
+	# mini-create-react-context
 
-> Polyfill for the [proposed React context API](https://github.com/reactjs/rfcs/pull/2)
+> (A smaller) Polyfill for the [proposed React context API](https://github.com/reactjs/rfcs/pull/2)
 
 ## Install
 
 ```sh
-yarn add create-react-context
+npm install create-react-context
 ```
 
 You'll need to also have `react` and `prop-types` installed.
@@ -14,9 +14,17 @@ You'll need to also have `react` and `prop-types` installed.
 
 ```js
 const Context = createReactContext(defaultValue);
-// <Context.Provider value={providedValue}>{children}</Context.Provider>
-// ...
-// <Context.Consumer>{value => children}</Context.Consumer>
+/*
+	<Context.Provider value={providedValue}>
+		{children}
+	</Context.Provider>
+
+	...
+
+	<Context.Consumer>
+		{value => children}
+	</Context.Consumer>
+*/
 ```
 
 ## Example
@@ -74,9 +82,7 @@ class Title extends React.Component<{ children: Node }> {
 
 ## Compatibility
 
-This package only "ponyfills" the `React.createContext` API, not other
-unrelated React 16+ APIs. If you are using a version of React <16, keep
-in mind that you can only use features available in that version.
+This package only "ponyfills" the `React.createContext` API, not other unrelated React 16+ APIs. If you are using a version of React <16, keep in mind that you can only use features available in that version.
 
 For example, you cannot pass children types aren't valid pre React 16:
 
