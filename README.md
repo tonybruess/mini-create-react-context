@@ -1,11 +1,23 @@
-	# mini-create-react-context
+# mini-create-react-context
+
+<p align="center">
+<a href="https://packagephobia.now.sh/result?p=mini-create-react-context">
+	<img alt="npm install size" src="https://packagephobia.now.sh/badge?p=mini-create-react-context">
+</a>
+<a href="https://bundlephobia.com/result?p=mini-create-react-context">
+	<img alt="npm bundle size" src="https://img.shields.io/bundlephobia/min/mini-create-react-context.svg?style=flat-square">
+</a>
+<a href="https://www.npmjs.com/package/mini-create-react-context">
+    <img alt="npm" src="https://img.shields.io/npm/v/mini-create-react-context.svg?style=flat-square">
+</a>
+</p>
 
 > (A smaller) Polyfill for the [proposed React context API](https://github.com/reactjs/rfcs/pull/2)
 
 ## Install
 
 ```sh
-npm install create-react-context
+npm install mini-create-react-context
 ```
 
 You'll need to also have `react` and `prop-types` installed.
@@ -32,7 +44,7 @@ const Context = createReactContext(defaultValue);
 ```js
 // @flow
 import React, { type Node } from 'react';
-import createReactContext, { type Context } from 'create-react-context';
+import createReactContext, { type Context } from 'mini-create-react-context';
 
 type Theme = 'light' | 'dark';
 // Pass a default theme to ensure type correctness
