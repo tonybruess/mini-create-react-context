@@ -1,0 +1,37 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"*": [
+				"types/*"
+			]
+		},
+		"moduleResolution": "node",
+		"jsx": "react",
+		"emitDeclarationOnly": true,
+		"module": "es2015",
+		"removeComments": true,
+		"lib": [
+			"es2015",
+			"es2016",
+			"dom"
+		],
+		"strict": true,
+		"allowSyntheticDefaultImports": true,
+		"typeRoots": [
+			"node_modules/@types"
+		],
+		"noImplicitAny": true,
+		"noImplicitReturns": true,
+		"resolveJsonModule": true,
+		"declaration": true,
+		"declarationDir": "dist/types",
+	},
+	"include": [
+		"src"
+	],
+	"exclude": [
+		"node_modules",
+		"**/__tests__/**"
+	]
+}

@@ -1,8 +1,5 @@
 node_modules
 *.log
-lib
+dist
 coverage
 .DS_Store
-examples/*/bundle.js
-examples/*/package-lock.json
-examples/*/yarn.lock

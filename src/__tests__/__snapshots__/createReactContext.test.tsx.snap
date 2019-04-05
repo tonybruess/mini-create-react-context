@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`with provider - after click 1`] = `
+exports[`with provider: with provider - after click 1`] = `
 <ThemeToggler>
   <Provider
     value="dark"
@@ -19,7 +19,7 @@ exports[`with provider - after click 1`] = `
             }
           }
         >
-          Hello World
+          Hello World 
         </h1>
       </Consumer>
     </Title>
@@ -27,7 +27,7 @@ exports[`with provider - after click 1`] = `
 </ThemeToggler>
 `;
 
-exports[`with provider - init 1`] = `
+exports[`with provider: with provider - init 1`] = `
 <ThemeToggler>
   <Provider
     value="light"
@@ -46,7 +46,7 @@ exports[`with provider - init 1`] = `
             }
           }
         >
-          Hello World
+          Hello World 
         </h1>
       </Consumer>
     </Title>
@@ -64,7 +64,7 @@ exports[`without provider 1`] = `
         }
       }
     >
-      Hello World
+      Hello World 
     </h1>
   </Consumer>
 </Title>
