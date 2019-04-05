@@ -6,7 +6,7 @@
 	"module": "dist/esm/index.js",
 	"types": "dist/index.d.ts",
 	"typings": "lib/index.d.ts",
-	"repository": "https://github.com/StringEpsilon/create-react-context",
+	"repository": "https://github.com/StringEpsilon/mini-create-react-context",
 	"author": "StringEpsilon",
 	"license": "MIT",
 	"keywords": [
@@ -21,10 +21,8 @@
 	],
 	"scripts": {
 		"test": "jest",
-		"format": "prettier --write '**/*.{js,md,json,js.flow,d.ts}'",
 		"build": "rollup -c rollup.config.js",
-		"prepublish": "npm run build",
-		"commit": "lint-staged"
+		"prepublish": "npm run build"
 	},
 	"dependencies": {
 		"gud": "^1.0.0",
