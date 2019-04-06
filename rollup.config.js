@@ -1,7 +1,6 @@
-const babel = require("rollup-plugin-babel");
-const commonjs = require("rollup-plugin-commonjs");
 const nodeResolve = require("rollup-plugin-node-resolve");
 const { uglify } = require("rollup-plugin-uglify");
+const ts = require("@wessberg/rollup-plugin-ts");
 
 const externalModules = ["react", "gud", "tiny-warning", "prop-types"];
 const extensions = [".ts", ".tsx"];
@@ -13,8 +12,9 @@ const cjs = [
 		external: externalModules,
 		plugins: [
 			nodeResolve({ extensions }),
-			babel({ exclude: /node_modules/, extensions }),
-			commonjs({ extensions }),
+			ts({
+				transpiler: "babel",
+			}),
 		]
 	},
 	{
@@ -23,7 +23,9 @@ const cjs = [
 		external: externalModules,
 		plugins: [
 			nodeResolve({ extensions }),
-			babel({ exclude: /node_modules/, extensions }),
+			ts({
+				transpiler: "babel",
+			}),
 			uglify(),
 		]
 	}
@@ -36,9 +38,8 @@ const esm = [
 		external: externalModules,
 		plugins: [
 			nodeResolve({ extensions }),
-			babel({
-				exclude: /node_modules/,
-				extensions,
+			ts({
+				transpiler: "babel",
 			}),
 		]
 	}

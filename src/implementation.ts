@@ -29,7 +29,7 @@ export type Context<T> = {
 
 export type ProviderProps<T> = {
 	value: T;
-	children: React.ReactNode;
+	children?: React.ReactNode;
 	observedBits: any,
 };
 
@@ -66,7 +66,7 @@ function onlyChild(children: any): any {
 	return Array.isArray(children) ? children[0] : children;
 }
 
-function createReactContext<T>(defaultValue: T, calculateChangedBits?: (a: T, b: T) => number): Context<T> {
+export default function createReactContext<T>(defaultValue: T, calculateChangedBits?: (a: T, b: T) => number): Context<T> {
 	const contextProp = '__create-react-context-' + gud() + '__';
 
 	class Provider extends Component<ProviderProps<T>> {
@@ -179,4 +179,3 @@ function createReactContext<T>(defaultValue: T, calculateChangedBits?: (a: T, b:
 	};
 }
 
-export default createReactContext;
