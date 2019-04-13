@@ -4,8 +4,8 @@
 <a href="https://packagephobia.now.sh/result?p=mini-create-react-context">
 	<img alt="npm install size" src="https://packagephobia.now.sh/badge?p=mini-create-react-context">
 </a>
-<a href="https://bundlephobia.com/result?p=mini-create-react-context">
-	<img alt="npm bundle size" src="https://img.shields.io/bundlephobia/min/mini-create-react-context.svg?style=flat-square">
+<a href="https://bundlephobia.com/result?p=mini-create-react-context@latest">
+	<img alt="npm bundle size" src="https://img.shields.io/bundlephobia/min/mini-create-react-context/latest.svg?style=flat-square">
 </a>
 <a href="https://www.npmjs.com/package/mini-create-react-context">
     <img alt="npm" src="https://img.shields.io/npm/v/mini-create-react-context.svg?style=flat-square">
@@ -115,3 +115,10 @@ It will throw `A valid React element (or null) must be returned. You may have re
   </div>
 </Context.Provider>
 ```
+
+## Size difference to the original:
+|            | original | **mini**
+|------------|----------|-----
+|install size| [2.45 mB](https://packagephobia.now.sh/result?p=create-react-context) | [**150 kB**](https://packagephobia.now.sh/result?p=mini-create-react-context)
+|minified    | 3.6 kB   | **2.3kB**
+|minzip      | 1.4 kB   | **1.0kB**
