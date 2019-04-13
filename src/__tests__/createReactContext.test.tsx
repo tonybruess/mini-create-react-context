@@ -93,8 +93,7 @@ test('can skip consumers with bitmask', () => {
 
 	function Provider(props) {
 		return (
-			<Context.Provider value={{ foo: props.foo, bar: props.bar }
-			}>
+			<Context.Provider value={{ foo: props.foo, bar: props.bar }}>
 				{props.children}
 			</Context.Provider>
 		);

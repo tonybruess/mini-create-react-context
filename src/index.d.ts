@@ -14,8 +14,8 @@ export type Context<T> = {
 
 export type ProviderProps<T> = {
 	value: T;
-	children: React.ReactNode;
-	observedBits: any,
+	children?: React.ReactNode;
+	observedBits?: any,
 };
 
 export type ConsumerProps<T> = {

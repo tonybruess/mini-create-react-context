@@ -30,7 +30,7 @@ export type Context<T> = {
 export type ProviderProps<T> = {
 	value: T;
 	children?: React.ReactNode;
-	observedBits: any,
+	observedBits?: any,
 };
 
 export type ConsumerProps<T> = {

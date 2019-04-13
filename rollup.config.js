@@ -1,48 +1,60 @@
-const nodeResolve = require("rollup-plugin-node-resolve");
-const { uglify } = require("rollup-plugin-uglify");
-const ts = require("@wessberg/rollup-plugin-ts");
-
-const externalModules = ["react", "gud", "tiny-warning", "prop-types"];
+import ts from "@wessberg/rollup-plugin-ts";
+import path from "path";
+import commonjs from "rollup-plugin-commonjs";
+import nodeResolve from "rollup-plugin-node-resolve";
+import { uglify } from "rollup-plugin-uglify";
 const extensions = [".ts", ".tsx"];
 
-const cjs = [
-	{
-		input: "src/index.ts",
-		output: { file: `dist/cjs/index.js`, format: "cjs", compact: true, },
-		external: externalModules,
-		plugins: [
-			nodeResolve({ extensions }),
-			ts({
-				transpiler: "babel",
-			}),
-		]
-	},
-	{
-		input: "src/index.ts",
-		output: { file: `dist/cjs/index.min.js`, format: "cjs", compact: true, },
-		external: externalModules,
-		plugins: [
-			nodeResolve({ extensions }),
-			ts({
-				transpiler: "babel",
-			}),
-			uglify(),
-		]
+function isBareModuleId(id) {
+	if (id.startsWith(".")) {
+		return false;
 	}
-];
-
-const esm = [
-	{
-		input: "src/index.ts",
-		output: { file: `dist/esm/index.js`, format: "esm" },
-		external: externalModules,
-		plugins: [
-			nodeResolve({ extensions }),
-			ts({
-				transpiler: "babel",
-			}),
-		]
+	if (id.startsWith("src")) {
+		return false;
 	}
-];
+	return !id.includes(path.join(process.cwd(), "src"));
+}
 
-module.exports = cjs.concat(esm);
+export default function configureRollup() {
+	return [
+		// CJS:
+		{
+			input: "src/index.ts",
+			output: { file: `dist/cjs/index.js`, format: "cjs", compact: true },
+			external: isBareModuleId,
+			plugins: [
+				nodeResolve({ extensions }),
+				ts({
+					transpiler: "babel",
+				}),
+				commonjs(),
+			],
+		},
+		{
+			input: "src/index.ts",
+			output: { file: `dist/cjs/index.min.js`, format: "cjs", compact: true },
+			external: isBareModuleId,
+			plugins: [
+				nodeResolve({ extensions }),
+				ts({
+					transpiler: "babel",
+				}),
+				commonjs(),
+				uglify(),
+			],
+		},
+		// ESM:
+		{
+			input: "src/index.ts",
+			output: { file: `dist/esm/index.js`, format: "esm" },
+			external: isBareModuleId,
+			plugins: [
+				nodeResolve({ extensions }),
+				ts({
+					transpiler: "babel",
+				}),
+				commonjs(),
+			],
+		},
+	];
+}
