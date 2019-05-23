@@ -119,6 +119,6 @@ It will throw `A valid React element (or null) must be returned. You may have re
 ## Size difference to the original:
 |            | original | **mini**
 |------------|----------|-----
-|install size| [2.45 mB](https://packagephobia.now.sh/result?p=create-react-context) | [**150 kB**](https://packagephobia.now.sh/result?p=mini-create-react-context)
-|minified    | 3.6 kB   | **2.3kB**
+|install size| [2.45 mB](https://packagephobia.now.sh/result?p=create-react-context) | [**140 kB**](https://packagephobia.now.sh/result?p=mini-create-react-context)
+|minified    | [3.6 kB](https://bundlephobia.com/result?p=create-react-context) | [**2.3kB**](https://bundlephobia.com/result?p=mini-create-react-context)
 |minzip      | 1.4 kB   | **1.0kB**
