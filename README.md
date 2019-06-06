@@ -12,7 +12,7 @@
 </a>
 </p>
 
-> (A smaller) Polyfill for the [proposed React context API](https://github.com/reactjs/rfcs/pull/2)
+> (A smaller) Polyfill for the [React context API](https://github.com/reactjs/rfcs/pull/2)
 
 ## Install
 
@@ -119,6 +119,6 @@ It will throw `A valid React element (or null) must be returned. You may have re
 ## Size difference to the original:
 |            | original | **mini**
 |------------|----------|-----
-|install size| [2.45 mB](https://packagephobia.now.sh/result?p=create-react-context) | [**140 kB**](https://packagephobia.now.sh/result?p=mini-create-react-context)
-|minified    | [3.6 kB](https://bundlephobia.com/result?p=create-react-context) | [**2.3kB**](https://bundlephobia.com/result?p=mini-create-react-context)
-|minzip      | 1.4 kB   | **1.0kB**
+|install size| [**50 kB**](https://packagephobia.now.sh/result?p=create-react-context) | [140 kB](https://packagephobia.now.sh/result?p=mini-create-react-context)
+|minified    | [3.3 kB](https://bundlephobia.com/result?p=create-react-context) | [**2.3kB**](https://bundlephobia.com/result?p=mini-create-react-context)
+|minzip      | 1.3 kB   | **1.0kB**
